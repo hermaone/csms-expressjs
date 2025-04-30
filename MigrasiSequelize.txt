@@ -1,0 +1,13 @@
+Install
+npm install sequelize sequelize-cli pg pg-hstore
+npx sequelize-cli init
+
+config/config.json: File konfigurasi database.
+migrations/: Folder untuk file migrasi.
+models/: Folder untuk model database.
+seeders/: Folder untuk data awal (seeding).
+
+1. npx sequelize-cli model:generate --name MstQuestion --attributes question:string // Buat Model dan Migrasi
+2. npx sequelize-cli db:migrate // Jalanlan migrasi
+3. npx sequelize-cli db:migrate:undo // Rollback migrasi
+
