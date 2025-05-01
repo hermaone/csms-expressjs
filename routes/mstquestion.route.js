@@ -3,7 +3,7 @@ var router = express.Router();
 var MstQuestionController = require('../controllers/mstquestion.controller'); // Import controller
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/question', function(req, res, next) {
   res.send('respond with a Question');
 });
 
