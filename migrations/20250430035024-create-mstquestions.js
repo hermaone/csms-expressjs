@@ -5,21 +5,32 @@ module.exports = {
     await queryInterface.createTable('mstquestions', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
       },
-      question: {
-        type: Sequelize.STRING
+      element: {
+        type: Sequelize.UUID,
+        allowNull: false,
+      },
+      vquestiontext: {
+        type: Sequelize.STRING(500),
+        allowNull: false,
+      },
+      ipoin: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
